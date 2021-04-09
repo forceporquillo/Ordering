@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10dp"
+    tools:context=".Login">
+
+    <TextView
+        android:hint="Login Page"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_width="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="11dp"
+        android:textSize="40dp"
+        android:layout_height="wrap_content"/>
+
+    <EditText
+        android:id="@+id/username1"
+        android:fontFamily="@font/poppinsbold"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Username"
+        android:layout_marginTop="150dp"/>
+
+    <EditText
+        android:id="@+id/password1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/username1"
+        android:layout_marginTop="11dp"
+        android:inputType="textPassword"
+        android:fontFamily="@font/poppinsbold"
+        android:hint="Password" />
+
+    <Button
+        android:id="@+id/btnlogin1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/password1"
+        android:layout_marginTop="26dp"
+        android:fontFamily="@font/poppinsbold"
+        android:text="Login" />
+
+    <TextView
+        android:id="@+id/btnreg1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnlogin1"
+        android:fontFamily="@font/poppinsmedium"
+        android:layout_centerHorizontal="true"
+        android:text="Don't have an account? Register here"/>
+
+
+    <TextView
+        android:id="@+id/main1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerHorizontal="true"
+        android:fontFamily="@font/poppinsmedium"
+        android:layout_marginTop="10dp"
+        android:text="Home"
+        android:layout_below="@id/btnreg1"/>
+
+</RelativeLayout>
