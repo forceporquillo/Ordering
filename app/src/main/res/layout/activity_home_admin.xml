@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".Home">
+    tools:context=".home.HomeActivity">
 
     <ImageView
         android:id="@+id/bg"
@@ -15,7 +15,7 @@
 
 
     <TextView
-        android:id="@+id/burgers"
+        android:id="@+id/items"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_below="@+id/bg"
@@ -29,8 +29,8 @@
         android:id="@+id/drinks"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_below="@+id/burgers"
-        android:layout_alignBottom="@+id/burgers"
+        android:layout_below="@+id/items"
+        android:layout_alignBottom="@+id/items"
         android:layout_centerHorizontal="true"
         android:layout_marginTop="27dp"
         android:layout_marginBottom="-86dp"

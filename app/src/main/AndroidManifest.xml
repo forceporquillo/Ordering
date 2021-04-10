@@ -2,22 +2,22 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.rmtc">
 
+    <uses-permission android:name="android.permission.INTERNET"/>
+
     <application
         android:allowBackup="true"
         android:icon="@mipmap/ic_launcher"
         android:label="@string/app_name"
-        android:roundIcon="@mipmap/ic_launcher_round"
+        android:roundIcon="@mipmap/rmtcburgers"
         android:supportsRtl="true"
         android:theme="@style/Theme.RMTC">
-        <activity android:name=".Contact"></activity>
-        <activity android:name=".Addons" />
-        <activity android:name=".Burgers" />
-        <activity android:name=".Drinks" />
+        <activity android:name=".OrderingActivity" />
         <activity android:name=".Checkout" />
-        <activity android:name=".HomeAdmin" />
-        <activity android:name=".Home" />
-        <activity android:name=".Register" />
-        <activity android:name=".Login" />
+        <activity android:name=".Contact" />
+        <activity android:name=".FoodItemsActivity" />
+        <activity android:name=".home.HomeActivity" />
+        <activity android:name=".login.RegisterActivity" />
+        <activity android:name=".login.LoginActivity" />
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
