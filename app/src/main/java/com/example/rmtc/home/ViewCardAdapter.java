@@ -16,19 +16,42 @@ import com.example.rmtc.R;
 
 import java.util.List;
 
+/**
+ * A recyclerView adapter that binds item into a recyclable list manner
+ * which let users scroll the list when finding a item.
+ *
+ * This adapter is used to attach the add to cart items
+ */
 public class ViewCardAdapter extends RecyclerView.Adapter<ViewCardAdapter.ViewCardViewHolder> {
 
     private final List<Items> itemsList;
 
+    /**
+     * Instantiate adapter with set of list items
+     * @param itemsList items to be displayed
+     */
     public ViewCardAdapter(final List<Items> itemsList) {
         this.itemsList = itemsList;
     }
 
+    /**
+     * Every time we add an item to the cart
+     * it invalidates the list, adding all items and redraws the list again
+     * @param list items to be added to the itemList
+     */
     public void update(final List<Items> list) {
         itemsList.addAll(list);
         notifyDataSetChanged();
     }
 
+    /**
+     * Creates itemViews of the layout view card items list.
+     * It uses inflater mechanism to attach the views to the adapter itself.
+     *
+     * @param parent the parent view of the adapter
+     * @param viewType return current position of itemView
+     * @return new instance of ViewCardViewHolder
+     */
     @NonNull
     @Override
     public ViewCardViewHolder onCreateViewHolder(@NonNull ViewGroup parent, int viewType) {
@@ -37,16 +60,28 @@ public class ViewCardAdapter extends RecyclerView.Adapter<ViewCardAdapter.ViewCa
         return new ViewCardViewHolder(view);
     }
 
+    /**
+     * Bind the items to the viewItem delegates backed by its index or position
+     * @param holder the view to add the items
+     * @param position position of the viewholder
+     */
     @Override
     public void onBindViewHolder(@NonNull ViewCardViewHolder holder, int position) {
         holder.bind(itemsList.get(position));
     }
 
+    /**
+     * return total count of items in the adapter
+     * @return
+     */
     @Override
     public int getItemCount() {
         return itemsList.size();
     }
 
+    /**
+     * A holder that holds the itemView which inflates from the adapter
+     */
     static class ViewCardViewHolder extends RecyclerView.ViewHolder {
         private final ImageView image;
         private final TextView view;
@@ -62,6 +97,9 @@ public class ViewCardAdapter extends RecyclerView.Adapter<ViewCardAdapter.ViewCa
 
         @SuppressLint("SetTextI18n")
         public void bind(final Items items) {
+
+            // load image url using glide library
+            // and set the image to the imageView
             Glide.with(image)
                     .load(items.getBurgerUrl())
                     .into(image);

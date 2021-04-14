@@ -4,6 +4,9 @@ import androidx.lifecycle.LiveData;
 import com.example.rmtc.User;
 import java.util.List;
 
+/**
+ * A single source of truth which retrieves and update the user frm UI to the Db vice versa.
+ */
 public class UserRepository {
 
     private final UserDao userDao;

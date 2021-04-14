@@ -3,6 +3,9 @@ package com.example.rmtc.home;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * A fake model data source which stores food items
+ */
 public class FoodItems {
 
     public static List<Items> getBurgers() {

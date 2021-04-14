@@ -30,6 +30,7 @@ public class LoginActivity extends BaseActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_login);
 
+        // create instance of user repository
         userRepository = new UserRepository(getApplication());
 
         username = (EditText) findViewById(R.id.username1);
@@ -48,7 +49,8 @@ public class LoginActivity extends BaseActivity {
                     Toast.makeText(LoginActivity.this, "Please enter all fields", Toast.LENGTH_SHORT).show();
                 }
                 else{
-                    userRepository.getCurrentUser(user, pass).observe(LoginActivity.this, (Observer<User>) _user -> {
+                    // check if user exist, otherwise start an intent.
+                    userRepository.getCurrentUser(user, pass).observe(LoginActivity.this, _user -> {
                         if(_user != null){
                             Toast.makeText(LoginActivity.this, "Login Successfully", Toast.LENGTH_SHORT).show();
                             storeUserAsSession(user);

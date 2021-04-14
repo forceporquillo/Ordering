@@ -10,6 +10,9 @@ import com.example.rmtc.User;
 
 import java.util.List;
 
+/**
+ * Query users using abstraction approach
+ */
 @Dao
 public interface UserDao {
 

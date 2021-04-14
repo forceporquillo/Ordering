@@ -5,6 +5,9 @@ import android.widget.Toast;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+/**
+ * Base class from the activity which contains a helper function for starting an activity.
+ */
 public class BaseActivity extends AppCompatActivity {
 
     protected void displayToast(final String message) {

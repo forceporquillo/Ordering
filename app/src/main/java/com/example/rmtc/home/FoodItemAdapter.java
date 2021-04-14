@@ -16,11 +16,17 @@ import com.example.rmtc.R;
 
 import java.util.List;
 
+/**
+ * Listener to listen to updates every time the item is added to cart
+ *
+ */
 interface ItemListener {
-
     void addToCart(Items items, int totalPrice, int adapterPosition);
 }
 
+/**
+ * An item adapter for attaching the items in a scrollable manner using Recyclerview.
+ */
 public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodItemViewHolder> {
 
     private final List<Items> list;
@@ -77,12 +83,16 @@ public class FoodItemAdapter extends RecyclerView.Adapter<FoodItemAdapter.FoodIt
             itemName.setText(items.getBurgerName());
             price.setText("PHP " + items.getPriceString());
 
+            // load image using glide library
             Glide.with(imageView)
                     .load(items.getBurgerUrl())
                     .into(imageView);
 
             quantity.setText(String.valueOf(items.getQuantity()));
 
+            /**
+             * A clickable button that dispatches new updates whenever a user add or removes a quantity of food in the cart
+             */
             positive.setOnClickListener(v -> {
                 setEnabled();
                 int quantity = items.getQuantity();
